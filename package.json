@@ -1,16 +1,19 @@
 {
-  "name": "@example/basics",
-  "type": "module",
-  "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "astro": "^1.6.15"
-  }
+    "name": "@example/basics",
+    "type": "module",
+    "version": "0.0.1",
+    "private": true,
+    "scripts": {
+        "dev": "astro dev",
+        "start": "astro dev",
+        "build": "astro build",
+        "preview": "astro preview",
+        "astro": "astro"
+    },
+    "dependencies": {
+        "@contentful/rich-text-html-renderer": "^16.0.2",
+        "@contentful/rich-text-types": "^16.0.2",
+        "astro": "^1.6.15",
+        "contentful": "^9.2.14"
+    }
 }

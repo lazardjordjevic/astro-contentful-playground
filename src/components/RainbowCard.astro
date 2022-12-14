@@ -1,0 +1,21 @@
+---
+import { contentfulClient } from '../lib/contentful'
+import type { RainbowCard } from '../lib/contentful';
+
+const entries = await contentfulClient.getEntries<RainbowCard>({
+    content_type: 'rainbowCard',
+})
+---
+
+<div>
+    {
+        entries.items.map(item => (
+            <h2>{item.fields.rainbowMeasurementText}</h2>
+            <p>{item.fields.rainbowMeasurementValue}</p>
+            <p>{item.fields.rainbowTitle}</p>
+            <img src={item.fields.rainbowImage.fields.file.url} height="100" width="100"/>
+        ))
+    }
+</div>
+
+<style></style>
