@@ -10,12 +10,109 @@ const entries = await contentfulClient.getEntries<RainbowCard>({
 <div>
     {
         entries.items.map(item => (
-            <h2>{item.fields.rainbowMeasurementText}</h2>
-            <p>{item.fields.rainbowMeasurementValue}</p>
-            <p>{item.fields.rainbowTitle}</p>
-            <img src={item.fields.rainbowImage.fields.file.url} height="100" width="100"/>
+            <div class="sp-card">
+                <div class="sp-card__inner">
+                    <div class="sp-card__avatar">
+                        <img class="sp-card__avatar-image" src={item.fields.rainbowImage.fields.file.url}/>
+                    </div>
+                    <h3 class="sp-card__title">{item.fields.rainbowTitle}</h3>
+                    <div class="sp-card__measurements">
+                        <div class="sp-card__line">
+                            <span class="sp-card__description">{item.fields.rainbowMeasurementText}</span>
+                            <span class="sp-card__size">{item.fields.rainbowMeasurementValue}</span>
+                        </div>
+                    </div>
+                    <div class="sp-card__measurements">
+                        <div class="sp-card__line">
+                            <span class="sp-card__description">{item.fields.rainbowMeasurementText}</span>
+                            <span class="sp-card__size">{item.fields.rainbowMeasurementValue}</span>
+                        </div>
+                    </div>
+                    <div class="sp-card__measurements">
+                        <div class="sp-card__line">
+                            <span class="sp-card__description">{item.fields.rainbowMeasurementText}</span>
+                            <span class="sp-card__size">{item.fields.rainbowMeasurementValue}</span>
+                        </div>
+                    </div>
+                    <div class="sp-card__measurements">
+                        <div class="sp-card__line">
+                            <span class="sp-card__description">{item.fields.rainbowMeasurementText}</span>
+                            <span class="sp-card__size">{item.fields.rainbowMeasurementValue}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         ))
     }
 </div>
 
-<style></style>
+<style>
+    .sp-card {
+        border-radius: 15px;
+        padding: 2px;
+        width: 100%;
+        position: relative;
+        text-align: center;
+        background: conic-gradient(from 220deg at 52.3% 54.16%,#dc9f1c 0deg,#e42922 108.12deg,#2085ce 201.88deg,#58b64a 275.93deg,#dc9f1c 359.51deg,#dc9f1c 1turn);
+        box-shadow: 3px 30px 58px rgb(0 0 0 / 8%), 1.5px 15px 25px rgb(0 0 0 / 5%), 0.6px 6px 9.5px rgb(0 0 0 / 4%), 0.2px 1.3px 3.3px rgb(0 0 0 / 3%);
+    }
+
+    .sp-card__inner {
+        padding: 38px 20px 0;
+        border-radius: 13px;
+        position: relative;
+        background-color: #fff;
+        overflow: hidden;
+    }
+
+    .sp-card__avatar {
+        width: 56px;
+        height: 56px;
+        margin-bottom: 20px;
+        position: relative;
+        border-radius: 50%;
+        overflow: hidden;
+        display: inline-block;
+    }
+
+    .sp-card__avatar-image {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        max-width: 100%;
+        vertical-align: middle;
+        border-style: none;
+    }
+
+    .sp-card__title {
+        font-size: 28px;
+        line-height: 26px;
+        margin-bottom: 30px;
+        letter-spacing: -.02em;
+        font-weight: 500;
+    }
+
+    .sp-card__line {
+        padding: 20px;
+        margin-bottom: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px solid #efefef;
+        border-radius: 4px;
+    }
+
+    .sp-card__description {
+        font-size: 11px;
+        line-height: 18px;
+        font-weight: 300;
+        color: #898989;
+    }
+
+    .sp-card__size {
+        font-size: 25px;
+        line-height: 25px;
+        font-weight: 500;
+    }
+</style>
